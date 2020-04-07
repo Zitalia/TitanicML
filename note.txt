@@ -1,0 +1,29 @@
+DONNEE-> sois BDD RELATIONNEL PLUSIEURS TABLE 
+	sois SCRIPT PYTHON POUR RECREER UN SEUL CSV 
+
+TRAIN(891;12)
+TESTSHAPE (418,11)
+GENDER (YTEST) (418;2)Ils sont liés par le Passenger Id , a voir si il y a des données non associés entres les deux datasets
+
+TRAIN Contient une variable SURVIVED que ne contient pas TEST 
+gender submission est Notre Y , il contient les variables Survived qui ne sont pas dans test
+
+Les ages contiennent des XX.5 (% 1 == 0 pour les retrouvers) on les arrondis a l'entier inf. ce sont des vals éstimés.
+les ages < 1 sont considéres comme des bébés, et peuvent donc etre laissée ainsi 
+
+git checkout adeline	
+git push --set-upstream origin adeline
+
+
+
+Determiner les survivants via ML 
+
+Dans le Train set : (891;12)
+La collone cabine a 77% De nul 687/891
+La collone Age a 19% De nul    177/891
+on compte 17% ou les lignes ou Cabine et age sont nuls 158/891
+
+Dans le Test set : (418,11)
+La collone cabine a 78% De nul 327/418
+La collone Age a 20.5% De nul  86/418
+on compte 17% ou les lignes ou Cabine et age sont nuls 82/418

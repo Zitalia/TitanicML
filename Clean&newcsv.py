@@ -7,7 +7,6 @@ Created on Mon Apr  6 09:24:59 2020
 import pandas as pd
 import math
 
-gender= pd.read_csv("data/gender_submission.csv")
 test= pd.read_csv("data/test.csv")
 train = pd.read_csv("data/train.csv")
 
@@ -41,7 +40,7 @@ def delageNaN(df):
     for index , i in df.iterrows():
         if math.isnan(i['Age']):
             nbrNan+=1
-            df.drop(index, inplace=True)
+            df['Age'][index]= df['Age'].median()
     for i in df.Age : 
         if i % 1 != 0 and i >1:
             i = round(i)
@@ -49,6 +48,10 @@ def delageNaN(df):
 
 def delcabincol(df):
     df = df.drop(columns=['Cabin'])
+    return df
+
+def delticketcol(df):
+    df = df.drop(columns=['Ticket'])
     return df
 
 def cleanEmbarked(df):
@@ -70,20 +73,20 @@ testAgeCabinNaN /test.shape[0] *100
 def cleanage(df):
     #Supression des lignes avec NaN dans Age et Cabin
     nbrNan, df = getbothNaN(df)
-    print(df)
+    if df.Fare.isna().sum() >= 1 :
+        cleanFare(test)
     #Round + del des autres lignes
     df = delageNaN(df)
     #Supression de la colonne Cabin
     df = delcabincol(df)
+    #Supression de la colonne Ticket
+    df = delticketcol(df)
     if df.Embarked.isna().sum() >= 1 :
         cleanEmbarked(df)
-    if df.Fare.isna().sum() >= 1 :
-        cleanFare(test)
     print("All cleaned")
     return df
 test = cleanage(test)
 train = cleanage(train)
 
-test.to_csv("data/cleantest.csv")
-train.to_csv("data/cleantrain.csv")
-    
+test.to_csv("data/cleantest.csv", index= False)
+train.to_csv("data/cleantrain.csv", index= False)
