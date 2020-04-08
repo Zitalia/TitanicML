@@ -130,3 +130,4 @@ def titanic_children(passenger):
 train['person'] = train[['Age','Sex']].apply(titanic_children,axis=1)
 train.head(10)
 sns.factorplot('Pclass',data=train,hue='person',kind='count')
+sns.lmplot('Age','Survived',data=train,hue='Sex')
