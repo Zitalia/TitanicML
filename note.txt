@@ -15,6 +15,14 @@ git checkout adeline
 git push --set-upstream origin adeline
 
 
+LIEN DU POWERPOINT : 
+https://docs.google.com/presentation/d/1qB9Ap8uy6ZM1ADh3SqiIg7434j9pM3Zr04_NCffdAxA/edit?usp=sharing
+
+*****************************************************************************************************
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+*****************************************************************************************************
+
+
 
 Determiner les survivants via ML 
 
@@ -27,3 +35,19 @@ Dans le Test set : (418,11)
 La collone cabine a 78% De nul 327/418
 La collone Age a 20.5% De nul  86/418
 on compte 17% ou les lignes ou Cabine et age sont nuls 82/418
+
+Table des Matieres 
+INTRODUCTION 
+-contexte, narration
+Decouverte des données 
+-relations 
+-hypotheses
+Regression linéaire 
+-inutile
+Regression Logistique 
+-Explication d'un algorithme
+-Analyse 
+Conclusion 
+-récap de tout ce qui a était affirmé (hypotheses, corrélations, res de reg log)
+-fin de l'histoire/conclusion du contexte
+
